@@ -22,9 +22,8 @@
         "mcamara/laravel-localization": "^2.3",
         "statikbe/laravel-chained-translator": "dev-feature/laravel-13 as 2.5.0",
         "statikbe/laravel-filament-chained-translation-manager": "^4.0",
-        "statikbe/laravel-filament-flexible-blocks-asset-manager": "^1.0",
         "statikbe/laravel-filament-flexible-content-block-pages": "dev-feature/laravel-13",
-        "statikbe/laravel-filament-flexible-content-blocks": "dev-feature/laravel-13",
+        "statikbe/laravel-filament-flexible-content-blocks": "dev-feature/laravel-13 as 4.0.4",
         "statikbe/laravel-puppeteer-pdf-converter": "dev-feature/laravel-13",
         "statikbe/laravel-security-txt": "dev-feature/laravel-13",
         "statikbe/laravel-surveyhero": "dev-feature/laravel-13"
@@ -95,7 +94,8 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/vanneszias/laravel-filament-flexible-content-blocks.git"
+            "url": "https://github.com/vanneszias/laravel-filament-flexible-content-blocks.git",
+            "canonical": false
         },
         {
             "type": "vcs",
