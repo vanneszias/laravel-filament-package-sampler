@@ -20,9 +20,14 @@
         "laravel/sanctum": "^5.0",
         "laravel/tinker": "^2.10",
         "mcamara/laravel-localization": "^2.3",
+        "statikbe/laravel-chained-translator": "dev-feature/laravel-13",
         "statikbe/laravel-filament-chained-translation-manager": "^4.0",
         "statikbe/laravel-filament-flexible-blocks-asset-manager": "^1.0",
-        "statikbe/laravel-filament-flexible-content-blocks": "^4.0"
+        "statikbe/laravel-filament-flexible-content-block-pages": "dev-feature/laravel-13",
+        "statikbe/laravel-filament-flexible-content-blocks": "dev-feature/laravel-13",
+        "statikbe/laravel-puppeteer-pdf-converter": "dev-feature/laravel-13",
+        "statikbe/laravel-security-txt": "dev-feature/laravel-13",
+        "statikbe/laravel-surveyhero": "dev-feature/laravel-13"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",
@@ -76,19 +81,36 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
-    "local": {
-        "type": "path",
-        "url": "./packages/*",
-        "options": {
-            "symlink": true
-        }
-    },
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/laravel-shift/seotools.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vanneszias/laravel-chained-translator.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vanneszias/laravel-filament-flexible-content-block-pages.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vanneszias/laravel-filament-flexible-content-blocks.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vanneszias/laravel-puppeteer-pdf-converter.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vanneszias/laravel-security-txt.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/vanneszias/laravel-surveyhero.git"
         }
     ]
 }
