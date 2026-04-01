@@ -21,17 +21,8 @@ class DownloadPdfAction extends Action
         $this->label('Download PDF')
             ->icon('heroicon-o-arrow-down-tray')
             ->color('gray')
+            ->visible(fn () => (bool) config('puppeteer-pdf-converter.pdf_conversion_api'))
             ->action(function ($record) {
-                if (! config('puppeteer-pdf-converter.pdf_conversion_api')) {
-                    Notification::make()
-                        ->title('PDF converter not configured')
-                        ->body('Set PDF_CONVERSION_API in your .env file to enable PDF generation.')
-                        ->warning()
-                        ->send();
-
-                    return;
-                }
-
                 try {
                     $pdfUrl = PuppeteerPdfConverter::convertRoute(
                         'page_pdf',
