@@ -34,7 +34,7 @@ class DownloadPdfAction extends Action
 
                 try {
                     $pdfUrl = PuppeteerPdfConverter::convertRoute(
-                        'page_index',
+                        'page_pdf',
                         ['page' => $record],
                         $record->slug.'.pdf'
                     );

@@ -22,4 +22,10 @@ class PageController extends Controller
             'page' => $page,
         ]);
     }
+
+    public function pdf(Page $page){
+        return view('pages.pdf', [
+            'page' => $page,
+        ]);
+    }
 }

@@ -19,6 +19,7 @@ Route::get('/', function () {
 })->name('home_index');
 
 Route::get('/page/{page}', [\App\Http\Controllers\PageController::class, 'index'])->name('page_index');
+Route::get('/page/{page}/pdf', [\App\Http\Controllers\PageController::class, 'pdf'])->name('page_pdf')->middleware('signed');
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
