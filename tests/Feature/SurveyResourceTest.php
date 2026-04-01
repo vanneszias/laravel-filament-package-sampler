@@ -29,14 +29,21 @@ class SurveyResourceTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_can_render_survey_view_page(): void
+    public function test_can_render_create_survey_form(): void
+    {
+        $response = $this->get(SurveyResource::getUrl('create'));
+
+        $response->assertStatus(200);
+    }
+
+    public function test_can_render_edit_survey_page(): void
     {
         $survey = Survey::create([
             'name' => 'Test Survey',
             'surveyhero_id' => 123456,
         ]);
 
-        $response = $this->get(SurveyResource::getUrl('view', ['record' => $survey]));
+        $response = $this->get(SurveyResource::getUrl('edit', ['record' => $survey]));
 
         $response->assertStatus(200);
     }

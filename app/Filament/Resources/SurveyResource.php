@@ -4,9 +4,12 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\SurveyResource\Pages;
 use App\Filament\Resources\SurveyResource\RelationManagers;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
-use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -20,7 +23,17 @@ class SurveyResource extends Resource
 
     public static function form(Schema $form): Schema
     {
-        return $form->schema([]);
+        return $form->schema([
+            TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+            TextInput::make('surveyhero_id')
+                ->label('Surveyhero ID')
+                ->numeric()
+                ->required(),
+            Toggle::make('use_resume_link')
+                ->label('Use Resume Link'),
+        ]);
     }
 
     public static function table(Table $table): Table
@@ -45,9 +58,11 @@ class SurveyResource extends Resource
                     ->sortable(),
             ])
             ->actions([
-                ViewAction::make(),
+                EditAction::make(),
             ])
-            ->bulkActions([])
+            ->bulkActions([
+                DeleteBulkAction::make(),
+            ])
             ->defaultSort('name');
     }
 
@@ -62,7 +77,8 @@ class SurveyResource extends Resource
     {
         return [
             'index' => Pages\ListSurveys::route('/'),
-            'view' => Pages\ViewSurvey::route('/{record}'),
+            'create' => Pages\CreateSurvey::route('/create'),
+            'edit' => Pages\EditSurvey::route('/{record}/edit'),
         ];
     }
 }
