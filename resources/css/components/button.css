@@ -18,7 +18,7 @@
 
             &:hover,
             .group:hover & {
-                @apply text-primary-hoverContrast no-underline bg-primary-hover border-primary-hover;
+                @apply text-primary-hover-contrast no-underline bg-primary-hover border-primary-hover;
             }
         }
 
@@ -27,7 +27,7 @@
 
             &:hover,
             .group:hover & {
-                @apply text-secondary-hoverContrast no-underline bg-secondary-hover border-secondary-hover;
+                @apply text-secondary-hover-contrast no-underline bg-secondary-hover border-secondary-hover;
             }
         }
 
@@ -36,7 +36,7 @@
 
             &:hover,
             .group:hover & {
-                @apply text-primary-hoverContrast no-underline bg-primary-hover border-primary-hover;
+                @apply text-primary-hover-contrast no-underline bg-primary-hover border-primary-hover;
             }
         }
     }

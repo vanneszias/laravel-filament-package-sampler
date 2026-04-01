@@ -5,6 +5,7 @@ namespace App\Filament\Resources\TranslatablePageResource\Pages;
 use App\Filament\Resources\TranslatablePageResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Statikbe\FilamentFlexibleContentBlocks\Filament\Pages\CreateRecord\Concerns\TranslatableWithMedia;
 
 class CreateTranslatablePage extends CreateRecord
@@ -16,7 +17,7 @@ class CreateTranslatablePage extends CreateRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\LocaleSwitcher::make(),
+            LocaleSwitcher::make(),
         ];
     }
 }

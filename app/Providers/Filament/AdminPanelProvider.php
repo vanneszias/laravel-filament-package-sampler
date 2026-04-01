@@ -8,7 +8,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\SpatieLaravelTranslatablePlugin;
+use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -60,7 +60,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentChainedTranslationManagerPlugin::make(),
-                SpatieLaravelTranslatablePlugin::make()
+                SpatieTranslatablePlugin::make()
                     ->defaultLocales(config('filament-translation-manager.locales', config('filament-translation-manager.supported_locales'))),
                 FilamentFlexibleBlocksAssetManagerPlugin::make(),
             ])

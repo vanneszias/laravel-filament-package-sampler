@@ -16,9 +16,10 @@
         "filament/filament": "^4.0",
         "filament/spatie-laravel-translatable-plugin": "^3.3",
         "guzzlehttp/guzzle": "^7.9",
+        "lara-zeus/spatie-translatable": "^1.0",
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.10",
+        "laravel/tinker": "^3.0",
         "mcamara/laravel-localization": "^2.3",
         "statikbe/laravel-chained-translator": "dev-feature/laravel-13 as 2.5.0",
         "statikbe/laravel-filament-chained-translation-manager": "^4.0",
@@ -29,7 +30,7 @@
         "statikbe/laravel-surveyhero": "dev-feature/laravel-13"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.9",
+        "barryvdh/laravel-debugbar": "^4.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",

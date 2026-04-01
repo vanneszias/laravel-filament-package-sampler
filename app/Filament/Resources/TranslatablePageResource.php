@@ -6,11 +6,13 @@ use App\Filament\Resources\TranslatablePageResource\Pages\CreateTranslatablePage
 use App\Filament\Resources\TranslatablePageResource\Pages\EditTranslatablePage;
 use App\Filament\Resources\TranslatablePageResource\Pages\ListTranslatablePages;
 use App\Models\TranslatablePage;
-use Filament\Forms\Components\Tabs;
-use Filament\Forms\Components\Tabs\Tab;
-use Filament\Forms\Form;
-use Filament\Resources\Concerns\Translatable;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
+use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Tables\Table;
 use Filament\Tables;
 use Statikbe\FilamentFlexibleContentBlocks\Filament\Form\Fields\AuthorField;
@@ -37,9 +39,9 @@ class TranslatablePageResource extends Resource
 
     protected static ?string $recordRouteKeyName = 'id';
 
-    protected static ?string $navigationIcon = 'heroicon-o-globe-europe-africa';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-globe-europe-africa';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $form): Schema
     {
         return $form
             ->schema([
@@ -85,12 +87,12 @@ class TranslatablePageResource extends Resource
                 PublishedFilter::create(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
                 PublishAction::make(),
                 ViewAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 

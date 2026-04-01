@@ -5,7 +5,8 @@ namespace App\Filament\Resources\TranslatablePageResource\Pages;
 use App\Filament\Resources\TranslatablePageResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Filament\Resources\Pages\ListRecords\Concerns\Translatable;
+use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
+use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
 
 class ListTranslatablePages extends ListRecords
 {
@@ -17,7 +18,7 @@ class ListTranslatablePages extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
-            Actions\LocaleSwitcher::make(),
+            LocaleSwitcher::make(),
         ];
     }
 }

@@ -1,7 +1,7 @@
 name: larsam
 type: laravel
 docroot: public
-php_version: "8.2"
+php_version: "8.4"
 webserver_type: nginx-fpm
 xdebug_enabled: false
 additional_hostnames: []
@@ -12,7 +12,7 @@ database:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-nodejs_version: "18"
+nodejs_version: "20"
 disable_settings_management: true
 
 # Key features of ddev's config.yaml:
