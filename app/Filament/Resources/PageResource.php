@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Actions\DownloadPdfAction;
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
 use Filament\Schemas\Components\Tabs;
@@ -83,6 +84,7 @@ class PageResource extends Resource
                 EditAction::make(),
                 PublishAction::make(),
                 ViewAction::make(),
+                DownloadPdfAction::make(),
             ])
             ->bulkActions([
                 DeleteBulkAction::make(),
