@@ -47,4 +47,16 @@ class SurveyResourceTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_can_render_view_survey_page(): void
+    {
+        $survey = Survey::create([
+            'name' => 'Test Survey',
+            'surveyhero_id' => 123456,
+        ]);
+
+        $response = $this->get(SurveyResource::getUrl('view', ['record' => $survey]));
+
+        $response->assertStatus(200);
+    }
 }

@@ -6,6 +6,7 @@ use App\Filament\Resources\SurveyResource\Pages;
 use App\Filament\Resources\SurveyResource\RelationManagers;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -58,6 +59,7 @@ class SurveyResource extends Resource
                     ->sortable(),
             ])
             ->actions([
+                ViewAction::make(),
                 EditAction::make(),
             ])
             ->bulkActions([
@@ -69,6 +71,7 @@ class SurveyResource extends Resource
     public static function getRelations(): array
     {
         return [
+            RelationManagers\SurveyQuestionsRelationManager::class,
             RelationManagers\SurveyResponsesRelationManager::class,
         ];
     }
@@ -78,6 +81,7 @@ class SurveyResource extends Resource
         return [
             'index' => Pages\ListSurveys::route('/'),
             'create' => Pages\CreateSurvey::route('/create'),
+            'view' => Pages\ViewSurvey::route('/{record}'),
             'edit' => Pages\EditSurvey::route('/{record}/edit'),
         ];
     }
